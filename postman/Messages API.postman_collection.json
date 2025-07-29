@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "ac52f704-5ea5-4c31-9f7f-1f3b85191793",
+		"name": "Messages API",
+		"description": "Coleção de testes da Messages API (NestJS + DynamoDB)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6943002"
+	},
+	"item": [
+		{
+			"name": "Criar Mensagem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjoxLCJpYXQiOjE3NTM2Njg4NDMsImV4cCI6MTc1MzY3MjQ0M30._3-WKWaUcu2Fjt1G1LKxuq9LLeHMhPOFeA_U5OygG1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"Olá Talita!\",\n  \"sender\": \"+5511916102602\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjoxLCJpYXQiOjE3NTM2Njg4NDMsImV4cCI6MTc1MzY3MjQ0M30._3-WKWaUcu2Fjt1G1LKxuq9LLeHMhPOFeA_U5OygG1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/messages/0d573875-f8ac-4959-911b-4eb75d7305a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"0d573875-f8ac-4959-911b-4eb75d7305a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Remetente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "0d573875-f8ac-4959-911b-4eb75d7305a8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/messages?sender=5511916102602",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "sender",
+							"value": "5511916102602"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "0d573875-f8ac-4959-911b-4eb75d7305a8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"recebido\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/messages/024a8fc6-7642-4f21-ad0a-43217f3635bd/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"024a8fc6-7642-4f21-ad0a-43217f3635bd",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Período",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "0d573875-f8ac-4959-911b-4eb75d7305a8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/messages?startDate=2025-07-26&endDate=2025-07-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-07-26"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-07-28"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticação",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"test.user@empresa.com\", \"password\": \"SuP3rS3nh@\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
