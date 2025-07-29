@@ -98,7 +98,7 @@ JWT_EXPIRES_IN=3600s
 
 ```
 # Clone o projeto
-git clone https://github.com/seu-usuario/messages-api.git
+git clone https://github.com/talitacode/messages-api.git
 cd messages-api
 
 ```
