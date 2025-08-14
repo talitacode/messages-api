@@ -32,7 +32,7 @@
 					"raw": "{\n  \"content\": \"Olá Talita!\",\n  \"sender\": \"+5511916102602\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/messages",
+					"raw": "http://localhost:3000/v1/messages",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/messages/0d573875-f8ac-4959-911b-4eb75d7305a8",
+					"raw": "http://localhost:3000/v1/messages/0d573875-f8ac-4959-911b-4eb75d7305a8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -91,7 +91,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/messages?sender=5511916102602",
+					"raw": "http://localhost:3000/v1/messages?sender=5511916102602",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -135,7 +135,7 @@
 					"raw": "{\n  \"status\": \"recebido\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/messages/024a8fc6-7642-4f21-ad0a-43217f3635bd/status",
+					"raw": "http://localhost:3000/v1/messages/024a8fc6-7642-4f21-ad0a-43217f3635bd/status",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -172,7 +172,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/messages?startDate=2025-07-26&endDate=2025-07-28",
+					"raw": "http://localhost:3000/v1/messages?startDate=2025-07-26&endDate=2025-07-28",
 					"protocol": "http",
 					"host": [
 						"localhost"
