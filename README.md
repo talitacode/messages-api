@@ -4,6 +4,14 @@ API RESTful para gerenciamento de mensagens com autenticação JWT, banco de dad
 
 ---
 
+## Requisitos
+
+- Node.js = 22 
+- Docker e Docker Compose
+- AWS CLI (opcional, para interações locais)
+
+---
+
 ## Badge de cobertura e tecnologias
 
 ![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
@@ -61,10 +69,10 @@ src/
 ├── app.module.ts       # Módulo principal da aplicação
 ├── main.ts             # Bootstrap da aplicação
 ---
-```
+
 ## Requisitos
 
-- Node.js >= 18
+- Node.js = 22 
 - Docker e Docker Compose
 - AWS CLI (opcional, para interações locais)
 
